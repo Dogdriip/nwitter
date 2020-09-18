@@ -10,6 +10,7 @@ const Router = () => {
       <Switch>
         {isLoggedIn ? (
           <>
+            {"fragment for multiple routes (to be implemented)"}
             <Route exact path="/">
               <Home />
             </Route>
