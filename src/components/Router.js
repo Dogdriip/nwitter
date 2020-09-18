@@ -1,7 +1,7 @@
 import React from "react";
 import { HashRouter, Route, Switch } from "react-router-dom";
-import Auth from "../routes/Auth";
-import Home from "../routes/Home";
+import Auth from "routes/Auth";
+import Home from "routes/Home";
 
 const Router = ({ isLoggedIn }) => {
   return (
@@ -9,7 +9,7 @@ const Router = ({ isLoggedIn }) => {
       <Switch>
         {isLoggedIn ? (
           <>
-            {"fragment for multiple routes (to be implemented)"}
+            {/*fragment for multiple routes (to be implemented)*/}
             <Route exact path="/">
               <Home />
             </Route>
