@@ -5,6 +5,7 @@ const Auth = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [newAccount, setNewAccount] = useState(true);
+  const [error, setError] = useState("");
 
   const onChange = (e) => {
     const {
@@ -38,6 +39,7 @@ const Auth = () => {
       console.log(data);
     } catch (error) {
       console.error(error);
+      setError(error.message);
     }
   };
 
@@ -67,6 +69,9 @@ const Auth = () => {
           value={newAccount ? "Create Account" : "Sign In"}
         />
       </form>
+
+      <p>{error}</p>
+
       <div>
         <button onClick={toggleAccount}>
           Toggle to {newAccount ? "Sign In" : "Create Account"}
