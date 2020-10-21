@@ -41,6 +41,8 @@ const Auth = () => {
     }
   };
 
+  const toggleAccount = () => setNewAccount((prev) => !prev); // 이전 newAccount state값을 받아와서 inverse
+
   return (
     <div>
       <form onSubmit={onSubmit}>
@@ -60,8 +62,16 @@ const Auth = () => {
           onChange={onChange}
           required
         />
-        <input type="submit" value={newAccount ? "Create Account" : "Login"} />
+        <input
+          type="submit"
+          value={newAccount ? "Create Account" : "Sign In"}
+        />
       </form>
+      <div>
+        <button onClick={toggleAccount}>
+          Toggle to {newAccount ? "Sign In" : "Create Account"}
+        </button>
+      </div>
       <div>
         <button>Continue with Google</button>
         <button>Continue with Github</button>
